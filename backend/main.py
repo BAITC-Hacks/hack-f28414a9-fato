@@ -13,7 +13,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from backend.pipeline import process_recording
+from backend.pipeline import demo_recording, process_recording
 from backend.reports import create_report
 
 load_dotenv()
@@ -37,6 +37,14 @@ def index() -> FileResponse:
 @app.get("/api/health")
 def health() -> dict[str, str]:
     return {"status": "ok", "service": "AutoProtocol AI"}
+
+
+@app.get("/api/demo")
+def demo() -> dict[str, Any]:
+    result = demo_recording()
+    result.update({"id": uuid.uuid4().hex, "created_at": datetime.now(timezone.utc).isoformat()})
+    RESULTS[result["id"]] = result
+    return result
 
 
 @app.post("/api/process")
