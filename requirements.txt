@@ -1,0 +1,1 @@
+Set-Content requirements.txt "streamlit>=1.28.0`npython-docx>=0.8.11`npandas>=1.4.0`nopenai>=1.0.0"
