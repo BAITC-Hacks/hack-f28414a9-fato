@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AutoProtocol AI — протоколы встреч</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#"><span class="brand-mark">A</span><span>AutoProtocol <b>AI</b></span></a><span class="local-badge"><i></i> Локальная обработка</span></header>
+  <main>
+    <section class="hero"><div class="eyebrow">AI-ПОМОЩНИК ДЛЯ КОМАНД</div><h1>Из совещания —<br><em>в ясный план действий</em></h1><p>Загрузите запись. Мы подготовим транскрипт, краткое содержание и список поручений.</p></section>
+    <section class="upload-card" id="upload-card">
+      <div class="step"><span>01</span><div><strong>Добавьте запись</strong><small>Аудио или видео · MP3, WAV, M4A, MP4, MOV · до 500 МБ</small></div></div>
+      <label class="dropzone" id="dropzone"><input id="file-input" type="file" accept="audio/*,video/*,.m4a,.mp3,.wav,.mp4,.mov,.webm,.flac,.ogg"><span class="upload-icon">↑</span><strong id="file-label">Перетащите файл сюда</strong><span>или <u>выберите на устройстве</u></span><small id="file-meta"></small></label>
+      <button class="primary" id="process-button" disabled><span>Подготовить протокол</span><span>→</span></button>
+      <div class="privacy"><span>◈</span> Запись обрабатывается локально и удаляется после обработки</div>
+      <div class="error" id="error" hidden></div>
+    </section>
+    <section class="progress-card" id="progress" hidden><div class="spinner"></div><div><strong>Готовим протокол</strong><p>Распознаём речь и анализируем поручения. Длительная запись может обрабатываться несколько минут.</p></div></section>
+    <section class="results" id="results" hidden></section>
+    <footer>AutoProtocol AI <span>·</span> MVP HackAlem AI <span>·</span> Русский и казахский языки</footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body></html>
